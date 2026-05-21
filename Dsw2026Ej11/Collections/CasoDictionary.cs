@@ -9,7 +9,7 @@ namespace Dsw2026Ej11.Collections;
 //Incluir un método para eliminar un alumno utilizando la clave
 public class CasoDictionary
 {
-    //Supondre que el id es el legajo
+    
     private Dictionary<int, Alumno> DiccionarioAlumnos;
     public CasoDictionary()
     {

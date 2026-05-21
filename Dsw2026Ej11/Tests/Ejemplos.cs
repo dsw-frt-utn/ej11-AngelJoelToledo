@@ -27,7 +27,6 @@ internal class Ejemplos
             Console.WriteLine(alumno);
         }
 
-
         Console.WriteLine("\n Alumno buscado:");
         Alumno alumnoBuscado = CasoList.BuscarAlumno("Juan");
         Console.WriteLine(alumnoBuscado);
@@ -77,12 +76,16 @@ internal class Ejemplos
 
         Console.WriteLine("DiccionarioAlumnos:");
         var diccionarioAlumnos = CasoDictionary.RetornarDiccionario();
-        foreach (var alumno in diccionarioAlumnos)
+        foreach (KeyValuePair<int, Alumno> alumnos in diccionarioAlumnos)
         {
-            Console.WriteLine(alumno.Value);
+            //int llave = alumnos.Key;
+            Alumno alumnosValor = alumnos.Value;
+
+            //Console.WriteLine($"{llave}: {alumnosValor}");
+            //-- No es necesario mostrar la llave, ya que esta es el Id el cual de por si ya es parte de la clase alumno.
+            Console.WriteLine(alumnosValor);
         }
 
-        
         Console.WriteLine("\n Alumno buscado:");
         var alumnoBuscado = CasoDictionary.BuscarAlumno(1);
         Console.WriteLine(alumnoBuscado);
@@ -100,9 +103,9 @@ internal class Ejemplos
         CasoDictionary.EliminarAlumno(2);
 
         var diccionarioAlumnos2 = CasoDictionary.RetornarDiccionario();
-        foreach (var alumno in diccionarioAlumnos)
+        foreach (KeyValuePair<int, Alumno> alumnos in diccionarioAlumnos2)
         {
-            Console.WriteLine(alumno.Value);
+            Console.WriteLine(alumnos.Value);
         }
 
 
