@@ -1,6 +1,6 @@
 ﻿namespace Dsw2026Ej11.Domain;
 
-public class Libro
+public class Libro 
 {
     public int Id { get; set; }
     public string Titulo { get; set; }
@@ -11,6 +11,11 @@ public class Libro
         Id = id;
         Titulo = titulo;
         Precio = precio;
+    }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Precio: {Precio:C}, Título: {Titulo} ";
     }
 
     public static List<Libro> CrearLista()
