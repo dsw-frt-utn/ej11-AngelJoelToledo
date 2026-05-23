@@ -115,8 +115,62 @@ internal class Ejemplos
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
+        Console.WriteLine("EjemploLinq:");
 
-        
+        List<Libro> listar = Libro.CrearLista();
+
+        CasoLinq casoLinq = new CasoLinq();
+
+        Console.WriteLine("\n GetPrimero:");
+        Console.WriteLine(casoLinq.GetPrimero().ToString());
+
+        Console.WriteLine("\n GetUltimo:");
+        Console.WriteLine(casoLinq.GetUltimo().ToString());
+
+        Console.WriteLine("\n GetTotalPrecios:");
+        Console.WriteLine(casoLinq.GetTotalPrecios().ToString("C2"));
+
+        Console.WriteLine("\n GetPromedioPrecios:");
+        Console.WriteLine(casoLinq.GetPromedioPrecios().ToString("C2"));
+
+        Console.WriteLine("\n GetListById:");
+        var librosId = casoLinq.GetListById();
+        foreach (var libro in librosId)
+        {
+            Console.WriteLine(libro.ToString());
+        }
+
+        Console.WriteLine("\n GetLibros:");
+        var libros = casoLinq.GetLibros();
+        foreach (string libro in libros)
+        {
+            Console.WriteLine(libro);
+        }
+
+        Console.WriteLine("\n GetLibrosMayorPrecio:");
+        Console.WriteLine(casoLinq.GetMayorPrecio());
+
+        Console.WriteLine("\n GetLibrosMenorPrecio:");
+        Console.WriteLine(casoLinq.GetMenorPrecio());
+
+        Console.WriteLine("\n GetLibrosMayorPromedio:");
+        var librosMayorPromedio = casoLinq.GetMayorPromedio();
+        foreach (var libro in librosMayorPromedio)
+        {
+            Console.WriteLine(libro.ToString());
+        }
+
+        Console.WriteLine("\n GetLibrosDescendente:");
+        var librosDescendente = casoLinq.GetLibrosDescendente();
+        foreach (var libro in librosDescendente)
+        {
+            Console.WriteLine(libro.ToString());
+        }
+
+
+
+
+
 
     }
 }
